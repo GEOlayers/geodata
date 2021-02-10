@@ -6,9 +6,9 @@
                 alert(err.message)
             }else{
                 data.features.forEach(function(feature){
-                    feature.properties["confirmed:latest"] = feature.properties["confirmed:timeline"] = feature.properties.Confirmed
-                    feature.properties["deaths:latest"] = feature.properties["deaths:timeline"] = feature.properties.Deaths
-                    feature.properties["deathsrate:latest"] = feature.properties["deathsrate:timeline"] = Math.round(feature.properties.Deaths / feature.properties.Confirmed * 10000) / 100
+                    feature.properties["confirmed:latest"] = feature.properties.Confirmed
+                    feature.properties["deaths:latest"] = feature.properties.Deaths
+                    feature.properties["deathsrate:latest"] = Math.round(feature.properties.Deaths / feature.properties.Confirmed * 10000) / 100
                     feature.properties["name"] = feature.properties.Combined_Key || feature.properties.Province_State || feature.properties.Country_Region
                 })
                 data.properties = (data.properties || {})
