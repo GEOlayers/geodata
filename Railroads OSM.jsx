@@ -4,7 +4,6 @@ geolayers3.addToBrowser({
     query: '[out:json][timeout:25];\
     (\
         relation["route"="railway"]({{bbox}});\
-        relation["railway"]({{bbox}});\
     );\
     out body;>;out skel qt;'
 },function(err, data){
